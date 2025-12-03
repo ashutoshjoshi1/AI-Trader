@@ -9,16 +9,44 @@
 
 ### Step 2: Install the EA
 1. In MT5, go to **File** → **Open Data Folder**
-2. Navigate to: `MQL5\Experts\`
-3. Copy `XAUUSD_AI_Trader.mq5` into this folder
-4. Restart MT5 or press **F5** to refresh
+   - This opens a folder window (usually in AppData\Roaming\MetaQuotes\Terminal\)
+2. Navigate to: `MQL5\Experts\` folder
+   - If the `MQL5` folder doesn't exist, create it
+   - If the `Experts` folder doesn't exist inside `MQL5`, create it
+3. Copy `XAUUSD_AI_Trader.mq5` into the `Experts` folder
+   - **IMPORTANT**: Make sure the file has `.mq5` extension (not `.mq5.txt` or `.txt`)
+   - The full path should be: `...Terminal\[YourTerminalID]\MQL5\Experts\XAUUSD_AI_Trader.mq5`
+4. **Verify the file is there**:
+   - Keep the folder window open
+   - Check that `XAUUSD_AI_Trader.mq5` appears in the `Experts` folder
+   - Right-click the file → Properties → Ensure it's exactly `XAUUSD_AI_Trader.mq5`
+5. In MT5, press **F5** or right-click in Navigator panel → **Refresh**
+   - Or close and restart MT5 completely
 
 ### Step 3: Compile the EA
+
+**⚠️ IMPORTANT: Before proceeding, verify the file is in the correct location:**
+- In Windows File Explorer, navigate to: `C:\Users\[YourName]\AppData\Roaming\MetaQuotes\Terminal\[YourTerminalID]\MQL5\Experts\`
+- You should see `XAUUSD_AI_Trader.mq5` in this folder
+- File size should be approximately 28KB
+- File extension must be exactly `.mq5` (not `.mq5.txt`)
+
+**Now compile:**
+
 1. Press **F4** to open MetaEditor
-2. In Navigator panel, find **XAUUSD_AI_Trader.mq5** under Experts
-3. Double-click to open
-4. Press **F7** to compile
-5. Check bottom panel: should show "0 error(s), 0 warning(s)"
+2. In Navigator panel (left side), expand **Experts** folder
+   - If you don't see Navigator panel: **View** → **Toolbars** → **Navigator** (or press **Ctrl+N**)
+3. Look for **XAUUSD_AI_Trader.mq5** under Experts
+   - If you don't see it:
+     - **Right-click on "Experts"** → **Refresh** (or press F5)
+     - Or use **File** → **Open** → Navigate to the `Experts` folder → Select the `.mq5` file
+     - Check that file extension is `.mq5` (not `.mq5.txt`)
+     - Verify file is in correct folder (see troubleshooting below)
+     - Try closing and reopening MetaEditor
+4. Double-click **XAUUSD_AI_Trader.mq5** to open (or use File → Open)
+5. Press **F7** to compile
+6. Check bottom panel: should show "0 error(s), 0 warning(s)"
+   - If errors appear, they will be listed in the bottom panel
 
 ### Step 4: Attach to Chart
 1. In MT5, open an XAUUSD chart (any timeframe)
@@ -193,12 +221,37 @@ After installation, verify everything works:
 - Or use VPS/Virtual Machine (Options 3 or 4)
 - Native Mac MT5 may not support full MQL5
 
-### Issue: "EA not appearing in Navigator"
+### Issue: "EA not appearing in Navigator" or "Cannot find .mq5 file in MetaEditor"
 **Solution**:
-- Ensure file is in correct folder: `MQL5/Experts/`
-- File must be `.mq5` extension (not .mq4 or .txt)
-- Restart MT5 or press F5 to refresh
-- Check file was copied completely
+1. **Verify correct folder location**:
+   - In MT5: **File** → **Open Data Folder**
+   - Navigate to: `MQL5\Experts\` (create folders if they don't exist)
+   - The file should be at: `...Terminal\[YourTerminalID]\MQL5\Experts\XAUUSD_AI_Trader.mq5`
+   
+2. **Check file extension**:
+   - Windows may hide extensions by default
+   - In the folder, enable "Show file extensions" in View settings
+   - File should show as `XAUUSD_AI_Trader.mq5` (NOT `XAUUSD_AI_Trader.mq5.txt`)
+   - If it shows `.mq5.txt`, rename it to remove `.txt`
+   
+3. **Refresh MetaEditor**:
+   - In MetaEditor, right-click on "Experts" folder → **Refresh**
+   - Or press **F5** in MetaEditor
+   - Close and reopen MetaEditor
+   - Close and restart MT5 completely
+   
+4. **Verify file is actually there**:
+   - Open File Explorer to the `Experts` folder
+   - Make sure the file exists and has correct name
+   - Check file size (should be ~28KB)
+   
+5. **Alternative: Open file directly**:
+   - In MetaEditor: **File** → **Open** → Navigate to `MQL5\Experts\` → Select `XAUUSD_AI_Trader.mq5`
+   - This will open and add it to the project
+   
+6. **Check for multiple MT5 installations**:
+   - You might have multiple MT5 terminal folders
+   - Make sure you're using the correct data folder for your active MT5 installation
 
 ### Issue: "Compilation errors"
 **Solution**:

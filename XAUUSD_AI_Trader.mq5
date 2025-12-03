@@ -86,7 +86,7 @@ double macd_Main_M15[], macd_Signal_M15[], macd_Main_M5[], macd_Signal_M5[];
 double atr_M15_Buffer[], atr_M5_Buffer[];
 double stoch_Main_M5[], stoch_Signal_M5[];
 double bb_Upper_M15[], bb_Lower_M15[], bb_Middle_M15[];
-long volume_M15_Buffer[], volume_M5_Buffer[];
+double volume_M15_Buffer[], volume_M5_Buffer[];
 
 //+------------------------------------------------------------------+
 //| Expert initialization function                                     |
